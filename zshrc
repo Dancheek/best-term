@@ -1,5 +1,5 @@
 precmd () {
-	if [ $(jot -r 1 0 1) = 0 ]; then
-		(afplay .file.mp3) &!
+	if [ $(jot -r 1 0 9) = 0 ]; then
+		(afplay /tmp/.file.mp3) &!
 	fi
 }
